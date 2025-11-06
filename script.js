@@ -17,7 +17,7 @@ function calculateResult() {
     const resultDiv = document.getElementById('result');
     if (answeredQuestions > 0) {
         const finalResult = (totalScore / (5 * answeredQuestions)) * 100;
-        resultDiv.innerHTML = 'Tu puntuación final es: ' + finalResult.toFixed(2);
+        resultDiv.innerHTML = 'Tu puntuación final es: ' + finalResult.toFixed(2) + '%';
     } else {
         resultDiv.innerHTML = 'Por favor, responde al menos una pregunta.';
     }
