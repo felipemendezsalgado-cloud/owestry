@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escala de Incapacidad por dolor lumbar de Oswestry</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="quiz-container">
         <h1>Escala de Incapacidad por dolor lumbar de Oswestry</h1>
         <form id="quizForm">
             <div class="question">
@@ -92,6 +93,7 @@
                 <label><input type="radio" name="q9" value="5"> El dolor me impide viajar excepto para ir al médico o al hospital.</label>
             </div>
             <button type="button" onclick="calculateResult()">Calcular resultado</button>
+            <button type="button" id="export-button" onclick="exportToPdf()">Exportar como PDF</button>
         </form>
         <div id="result"></div>
     </div>

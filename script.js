@@ -22,3 +22,24 @@ function calculateResult() {
         resultDiv.innerHTML = 'Por favor, responde al menos una pregunta.';
     }
 }
+
+function exportToPdf() {
+    const element = document.getElementById('quiz-container');
+    const buttons = element.querySelectorAll('button');
+
+    // Ocultar los botones antes de generar el PDF
+    buttons.forEach(button => button.style.display = 'none');
+
+    const opt = {
+        margin:       1,
+        filename:     'cuestionario-oswestry.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().from(element).set(opt).save().then(() => {
+        // Mostrar los botones de nuevo después de generar el PDF
+        buttons.forEach(button => button.style.display = 'block');
+    });
+}
