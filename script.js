@@ -31,7 +31,7 @@ function exportToPdf() {
     buttons.forEach(button => button.style.display = 'none');
 
     const opt = {
-        margin:       1,
+        margin:       0.2,
         filename:     'cuestionario-oswestry.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 },
