@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #e8f5e9;
+    color: #1b5e20;
     line-height: 1.6;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #0056b3;
+    color: #2e7d32;
 }
 
 .question {
@@ -52,23 +52,35 @@ button {
     width: 100%;
     padding: 0.8rem;
     border: none;
-    background-color: #0056b3;
     color: #fff;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
 }
 
-button:hover {
-    background-color: #004494;
+button:nth-of-type(1) {
+    background-color: #4caf50;
+}
+
+button:nth-of-type(1):hover {
+    background-color: #388e3c;
+}
+
+button:nth-of-type(2) {
+    background-color: #81c784;
+}
+
+button:nth-of-type(2):hover {
+    background-color: #66bb6a;
 }
 
 #result {
     margin-top: 1.5rem;
     padding: 1rem;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
+    background-color: #c8e6c9;
+    border: 1px solid #a5d6a7;
     border-radius: 5px;
     text-align: center;
     font-size: 1.2rem;
