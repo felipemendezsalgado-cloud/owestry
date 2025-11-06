@@ -1,8 +1,8 @@
 function calculateResult() {
     const form = document.getElementById('quizForm');
     let totalScore = 0;
+    let answeredQuestions = 0;
     const totalQuestions = 9;
-    let allAnswered = true;
 
     for (let i = 1; i <= totalQuestions; i++) {
         const questionName = 'q' + i;
@@ -10,17 +10,15 @@ function calculateResult() {
 
         if (selectedOption && selectedOption.value) {
             totalScore += parseInt(selectedOption.value, 10);
-        } else {
-            allAnswered = false;
-            break;
+            answeredQuestions++;
         }
     }
 
     const resultDiv = document.getElementById('result');
-    if (allAnswered) {
-        const finalResult = totalScore * 2;
-        resultDiv.innerHTML = 'Tu puntuación final es: ' + finalResult;
+    if (answeredQuestions > 0) {
+        const finalResult = (totalScore / (5 * answeredQuestions)) * 100;
+        resultDiv.innerHTML = 'Tu puntuación final es: ' + finalResult.toFixed(2);
     } else {
-        resultDiv.innerHTML = 'Por favor, responde todas las preguntas antes de calcular el resultado.';
+        resultDiv.innerHTML = 'Por favor, responde al menos una pregunta.';
     }
 }
